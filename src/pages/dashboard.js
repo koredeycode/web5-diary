@@ -143,16 +143,25 @@ const DashboardPage = () => {
       <nav className="w-full text-white p-2 bg-blue-500 flex justify-around items-center">
         <h3 className="text-3xl font-bold">Reflectify</h3>
         <div className="flex gap-8">
-          <div className="flex flex-col gap-1 cursor-copy" onClick={copyDid}>
+          <div
+            className="flex flex-col gap-1 cursor-copy relative group"
+            onClick={copyDid}
+          >
             <span className="font-bold text-md">DID</span>
             <span>{truncateDid(did)}</span>
+            <div className="hidden group-hover:block p-2 bg-black text-white absolute top-[100%] w-[500px]">
+              <p style={{ 'word-wrap': 'break-word' }}>{did}</p>
+            </div>
           </div>
           <div
-            className="flex flex-col gap-1 cursor-copy"
+            className="flex flex-col gap-1 cursor-copy relative group"
             onClick={copyAgentDid}
           >
             <span className="font-bold text-md">AGENTDID</span>
             <span>{truncateDid(agentDid)}</span>
+            <div className="hidden group-hover:block p-2 bg-black text-white absolute top-[100%] w-[300px]">
+              <p style={{ 'word-wrap': 'break-word' }}>{agentDid}</p>
+            </div>
           </div>
         </div>
       </nav>

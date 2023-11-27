@@ -376,7 +376,7 @@ Click the "Import" button to import the data into your browser's IndexedDB.
 
 ![importing](./importing.png)
 
-12. Compare Data in Two Windows:
+9. Compare Data in Two Windows:
 
 Compare the data between the two browser windows. The Decentralized Identifier (DID) and the agent DID should be the same.
 
