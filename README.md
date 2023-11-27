@@ -1,6 +1,6 @@
-# Health Ledger
+# Reflectify
 
-Let's create a health tracker that actually puts privacy first.
+Web5 diary application decentralizing your thoughts and reflections.
 
 ## 🛠️ **Toolkit**
 
@@ -11,8 +11,8 @@ Let's create a health tracker that actually puts privacy first.
 ## 📝 Running
 
 ```bash
-git clone https://github.com/koredeycode/HealthLedger.git
-cd HealthLedger
+git clone https://github.com/koredeycode/web5-diary.git
+cd web5-diary
 npm install
 npm run dev
 ```
