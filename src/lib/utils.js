@@ -175,7 +175,6 @@ export const deleteRecord = async (web5, recordId, did) => {
       from: did,
       message: { recordId },
     });
-    // const deleteResult = await record.delete();
     if (deleteResult.status.code == 202) {
       console.log('Record deleted successfully');
     } else {

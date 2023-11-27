@@ -63,12 +63,14 @@ const exportFromIndexDB = async () => {
               const valueArray = Array.from(cursor.value);
               storeData.data.push({ key: keyArray, value: valueArray });
 
+              // convert the keys and value to readable format
               // const key = String.fromCharCode.apply(
               //   null,
               //   new Uint8Array(cursor.key),
               // );
               // const value = String.fromCharCode.apply(null, cursor.value);
               // storeData.data.push({ key, value });
+
               cursor.continue();
             } else {
               resolve();
@@ -85,8 +87,6 @@ const exportFromIndexDB = async () => {
       db.close();
     }
 
-    // Log the JSON data to the console (you can return it or use it as needed)
-    // console.log(JSON.stringify(allDatabases, null, 2));
     return allDatabases;
   } catch (error) {
     console.error('Error exporting IndexedDB to raw array JSON:', error);
