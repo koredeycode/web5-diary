@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Web5 } from '@web5/api';
 
-import exportFromIndexDB from '../utils/export';
+import exportFromIndexDB from '../lib/export';
 import {
   configureProtocol,
   constructDiaryEntry,
@@ -9,10 +9,10 @@ import {
   fetchRecords,
   updateRecord,
   deleteRecord,
-} from '../utils/utils';
+} from '../lib/utils';
 
-import DiaryForm from './components/DiaryForm';
-import DiaryEntry from './components/DiaryEntry';
+import DiaryForm from '../components/DiaryForm';
+import DiaryEntry from '../components/DiaryEntry';
 
 const DashboardPage = () => {
   const [did, setDID] = useState(null);

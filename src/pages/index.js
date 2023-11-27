@@ -3,11 +3,10 @@ import { useRouter } from 'next/router';
 
 const IndexPage = () => {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [isConnecting, setIsConnecting] = useState(false);
 
   const handleConnectClick = () => {
-    setLoading(true);
-
+    setIsConnecting(true);
     router.push('/dashboard');
   };
 
@@ -34,6 +33,13 @@ const IndexPage = () => {
           Import
         </button>
       </div>
+      {isConnecting && (
+        <div className="mt-4">
+          <p className="text-md">
+            Connecting to previous Web5 data or creating new one...
+          </p>
+        </div>
+      )}
     </div>
   );
 };

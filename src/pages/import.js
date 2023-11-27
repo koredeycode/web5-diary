@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-import importToIndexDB from '../utils/import';
+import importToIndexDB from '../lib/import';
 
 const ImportPage = () => {
   const router = useRouter();
@@ -33,7 +33,6 @@ const ImportPage = () => {
 
   return (
     <div className="h-screen w-screen  bg-blue-50 flex flex-col justify-center items-center gap-4">
-      {loading && <p className="">Importing...</p>}
       <h1 className="text-3xl font-bold ">Import Data</h1>
       <p className="">Carry your reflections along with you !!</p>
       <input
@@ -48,6 +47,7 @@ const ImportPage = () => {
       >
         Import
       </button>
+      {loading && <p className="">Importing your data...</p>}
     </div>
   );
 };
