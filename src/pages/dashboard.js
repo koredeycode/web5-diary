@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Web5 } from '@web5/api';
+import Link from 'next/link';
 
 import exportFromIndexDB from '../lib/export';
 import {
@@ -143,7 +144,9 @@ const DashboardPage = () => {
   return (
     <div className="h-full w-full">
       <nav className="w-full text-white p-2 bg-blue-500 flex justify-between items-center">
-        <h3 className="text-3xl font-bold">Reflectify</h3>
+        <Link href="/">
+          <h3 className="text-3xl font-bold">Reflectify</h3>
+        </Link>
         <div className="flex flex-col gap-2 md:flex-row md:gap-4">
           <div
             className="flex flex-col gap-1 cursor-copy relative group"
@@ -167,7 +170,7 @@ const DashboardPage = () => {
           </div>
         </div>
       </nav>
-      <div className="h-screen flex flex-col md:flex-row  bg-blue-50">
+      <div className="h-screen flex flex-col md:flex-row bg-blue-50">
         <div className="w-full  p-2 ">
           <DiaryForm
             addEntry={handleFormSubmit}
