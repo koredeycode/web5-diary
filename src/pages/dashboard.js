@@ -166,7 +166,7 @@ const DashboardPage = () => {
               <div className="font-bold text-md">DID</div>
               <div>{truncateDid(did)}</div>
               <div className="hidden group-hover:block p-2 bg-black text-white absolute top-[100%] -right-0 max-w-[300px] z-10">
-                <p style={{ 'word-wrap': 'break-word' }}>{did}</p>
+                <p style={{ wordWrap: 'break-word' }}>{did}</p>
               </div>
             </div>
             <div
@@ -176,7 +176,7 @@ const DashboardPage = () => {
               <div className="font-bold text-md">AGENTDID</div>
               <div>{truncateDid(agentDid)}</div>
               <div className="hidden group-hover:block p-2 bg-black text-white absolute top-[100%] -right-0 max-w-[300px] z-10">
-                <p style={{ 'word-wrap': 'break-word' }}>{agentDid}</p>
+                <p style={{ wordWrap: 'break-word' }}>{agentDid}</p>
               </div>
             </div>
           </div>

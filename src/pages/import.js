@@ -9,8 +9,10 @@ const ImportPage = () => {
   const [importedData, setImportedData] = useState(null);
 
   const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
+    console.log('handling file upload');
 
+    const file = event.target.files[0];
+    console.log('file', file);
     const data = await parseJsonFile(file);
     setImportedData(data);
     console.log(data);
