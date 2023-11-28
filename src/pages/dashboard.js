@@ -109,10 +109,12 @@ const DashboardPage = () => {
   };
 
   const handleDelete = async (recordId) => {
-    await deleteRecord(web5, recordId, did);
-    setDiaryEntries(
-      diaryEntries.filter((entry) => entry.recordId !== recordId),
-    );
+    if (confirm('Are you sure you want to delete this reflection?')) {
+      await deleteRecord(web5, recordId, did);
+      setDiaryEntries(
+        diaryEntries.filter((entry) => entry.recordId !== recordId),
+      );
+    }
   };
 
   const handleUpdate = async (recordId, newRecord) => {
