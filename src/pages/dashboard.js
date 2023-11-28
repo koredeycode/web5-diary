@@ -147,9 +147,9 @@ const DashboardPage = () => {
   return (
     <>
       {showMessage && (
-        <div className="absolute bottom-0 right-0 w-full flex justify-center items-center z-20">
-          <div className="bg-white p-2 rounded-md">
-            <p className="text-gray-800">Copied to clipboard!</p>
+        <div className="absolute top-0 right-0 w-full flex justify-center items-center z-20">
+          <div className="bg-gray-800 p-2 rounded-md">
+            <p className="text-white">Copied to clipboard!</p>
           </div>
         </div>
       )}
