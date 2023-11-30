@@ -68,6 +68,7 @@ const importToIndexDB = async (importData) => {
     console.log('Import successful!');
   } catch (error) {
     console.error('Error importing raw array JSON to IndexedDB:', error);
+    throw error;
   }
 };
 

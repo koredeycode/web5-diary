@@ -7,21 +7,33 @@ const ImportPage = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [importedData, setImportedData] = useState(null);
+  const [error, setError] = useState(false);
 
   const handleFileUpload = async (event) => {
-    console.log('handling file upload');
+    try {
+      console.log('handling file upload');
 
-    const file = event.target.files[0];
-    console.log('file', file);
-    const data = await parseJsonFile(file);
-    setImportedData(data);
-    console.log(data);
+      const file = event.target.files[0];
+
+      const data = await parseJsonFile(file);
+      setImportedData(data);
+      console.log(data);
+      setError(false);
+    } catch (error) {
+      setError(true);
+    }
   };
 
   const importData = async () => {
-    setLoading(true);
-    await importToIndexDB(importedData);
-    router.push('/dashboard');
+    try {
+      setLoading(true);
+      await importToIndexDB(importedData);
+      router.push('/dashboard');
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const parseJsonFile = async (file) => {
@@ -50,6 +62,7 @@ const ImportPage = () => {
         Import
       </button>
       {loading && <p className="">Importing your data...</p>}
+      {error && <p className="text-red-500">Error importing your data...</p>}
     </div>
   );
 };

@@ -90,6 +90,7 @@ const exportFromIndexDB = async () => {
     return allDatabases;
   } catch (error) {
     console.error('Error exporting IndexedDB to raw array JSON:', error);
+    throw error;
   }
 };
 
